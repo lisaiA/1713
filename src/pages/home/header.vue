@@ -1,15 +1,15 @@
 <template>
-  <header class="header">
-  	<a href="" class="headerLeft"><</a>
-  	<div class="headerTitle">
-  		<a href="">
-  			输入城市/景点/游玩主题
-  		</a>
-  	</div>
-  	<div class="headerRight">
-  		<span class="city">北京</span>
-  	</div>
-  </header>
+    <header class="header">
+	  	<a href="" class="headerLeft iconfont icon-back"></a>
+	  	<div class="headerTitle">
+	  		<a href="" class="iconfont icon-sousuo">
+	  			输入城市/景点/游玩主题
+	  		</a>
+	  	</div>
+	  	<div class="headerRight">
+	  		<a href=""><span class="city">北京</span></a>
+	  	</div>
+	</header>
 </template>
 
 <script>
@@ -29,43 +29,45 @@ export default {
 		width: 100%;
 		height: .88rem;
 		background: #00bcd4;
+		display: flex;
 	}
 	.headerLeft{
 		display: inline-block;
 		width: .4rem;
 		line-height: .88rem;
-		padding: 0 .2rem;
+		padding: 0 .4rem 0 0;
 		color: #fff;
-		font-size: .4rem;
-		float: left;
+		font-size: .5rem;
 	}
 	.headerTitle{
-		height: .6rem;
-		width: 4.08rem;
-		padding-left: 0.2rem;
-		background: #fff;
-		line-height: .6rem;
-		border-radius: .06rem;
-		margin: .14rem 0;
-		float: left;
+		display: inline-block;
+	    box-sizing: border-box;
+	    flex: 1;
+	    position: relative;
+	    height: .6rem;
+	    margin: .14rem 0;
+	    background: #fff;
+	    line-height: .6rem;
+	    border-radius: .06rem;
+	    padding-left: .2rem;
 	}
 	.headerTitle a{
-		white-space: nowrap;
-    	text-overflow: ellipsis;
     	color: #e4e7ea;
+    	font-size: .28rem;
 	}
 	.headerRight{
-		height: .88rem;
-		line-height: .88rem;
-		margin-right: .04rem;
-		float: right;	
+		display: inline-block;
+		height: 100%;
+		margin-right: .3rem;	
+	}
+	.headerRight a{
+		display: inline-block;
+	    line-height: .88rem;
+	    color: #fff
 	}
 	.city{
-		color: #fff;
-		font-size: 14px;
 		padding: 0 .22rem;
 		position: relative;
-		margin-right: .24rem;
 	}
 	.city:after{
 		content: "";

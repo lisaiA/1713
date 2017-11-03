@@ -1,13 +1,9 @@
 <template>
     <header class="header">
 	  	<a href="" class="headerLeft iconfont icon-back"></a>
-	  	<div class="headerTitle">
-	  		<router-link to="search" class="iconfont icon-sousuo">
-	  			输入城市/景点/游玩主题
-	  		</router-link>
-	  	</div>
+	  	<input class="headerTitle" type="text" placeholder="输入城市或景点">
 	  	<div class="headerRight">
-	  		<a href=""><span class="city">北京</span></a>
+	  		<a href=""><span class="search">搜索</span></a>
 	  	</div>
 	</header>
 </template>
@@ -15,11 +11,11 @@
 <script>
 
 export default {
-  data () {
-    return {
-      msg: 'header'
-    }
-  }
+	data () {
+		return {
+			msg: 'header'
+		}
+	}
 }
 </script>
 
@@ -50,33 +46,19 @@ export default {
 	    line-height: .6rem;
 	    border-radius: .06rem;
 	    padding-left: .2rem;
-	}
-	.headerTitle a{
-    	color: #e4e7ea;
-    	font-size: .28rem;
+	    border:0;
+	    font-size: .24rem;
 	}
 	.headerRight{
 		display: inline-block;
-		height: 100%;
-		margin-right: .3rem;	
+		height: 100%;	
 	}
 	.headerRight a{
 		display: inline-block;
 	    line-height: .88rem;
 	    color: #fff
 	}
-	.city{
+	.search{
 		padding: 0 .22rem;
-		position: relative;
-	}
-	.city:after{
-		content: "";
-		width: 0;
-		height: 0;
-		border-left: .12rem solid transparent;
-		border-right: .12rem solid transparent;
-		border-top:.12rem solid #fff;
-		position: absolute;
-		top: .1rem;
 	}
 </style>

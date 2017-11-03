@@ -84,12 +84,12 @@
         height: 3.6rem;
     }
     dt{
-        height: 0;
+        height: 2.4rem;
         width: 100%;
-        padding-bottom: 2.4rem;
     }
     dt img{
         width: 100%;
+        height: 100%;
     }
     dd{
         padding: .14rem .2rem .2rem .2rem;

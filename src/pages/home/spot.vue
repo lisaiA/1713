@@ -34,14 +34,14 @@
                     </a>
                 </dl>
                 <dl class="list">
-                    <a href="">
+                    <router-link to="/daytour">
                         <dd>
                             <img src="http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png" alt="">
                         </dd>
                         <dt>
                             一日游
                         </dt>
-                    </a>
+                    </router-link>
                 </dl>
                 <dl class="list">
                     <a href="">

@@ -3,14 +3,14 @@
         <swiper :options="swiperOption" ref="mySwiper">
             <swiper-slide v-for="(item, index) in getSpotInfo" :key="index">
                 <dl class="list" v-for="inner in item" :key="inner.id">
-                    <a :href="inner.link">
+                    <router-link :to="inner.link">
                         <dd>
                             <img :src="inner.src" alt="">
                         </dd>
                         <dt>
                             {{inner.title}}
                         </dt>
-                    </a>
+                    </router-link>
                 </dl>
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>

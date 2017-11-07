@@ -10,21 +10,18 @@
 </template>
 
 <script>
-    import header from './header.vue';
-    import carousel from './carousel.vue';
-    import spot from './spot.vue';
-    import location from './location.vue';
-    import selling from './selling.vue';
-    import week from './week.vue';
+    import header from './components/header.vue';
+    import carousel from './components/carousel.vue';
+    import spot from './components/spot.vue';
+    import location from './components/location.vue';
+    import selling from './components/selling.vue';
+    import week from './components/week.vue';
     import axios from 'axios';
+    import { GET_HOME_DATA } from './types.js'
+    import { mapState, mapActions } from 'vuex'
 
     export default {
 	   name:'HelloWorld',
-        data () {
-            return {
-                swiperInfo: []
-            }
-        },
         components: {
         	indexheader : header,
             headercarousel: carousel,
@@ -33,23 +30,36 @@
             headerselling:selling,
             headerweek:week
         },
-        mounted() {
-            this.getIndexData();
-        },
-        methods: {
-            getIndexData() {
-                axios.get('/static/index.json?city=北京')
-                    .then(this.handleGetIndexDataSucc.bind(this))
-                    .catch(this.handleGetIndexDataErr.bind(this));
+        computed: mapState({
+            swiperInfo: (state) => {
+                return state.home.swiperInfo;
             },
-            handleGetIndexDataSucc(res) {
-                const data = res.data.data;
-                this.swiperInfo = data.swiperInfo;
-            },
-            handleGetIndexDataErr(err) {
-                console.log(err)
+            spotInfo: (state) => {
+                return state.home.spotInfo;
             }
-        }
+        }),
+        mounted() {
+            if(!this.swiperInfo.length) {
+                this.getIndexData();
+            }
+        },
+        methods: mapActions({
+            getIndexData: (dispatch) => {
+                dispatch(GET_HOME_DATA)
+            }
+        })
+            // getIndexData() {
+            //     this.$store.dispatch(GET_HOME_DATA)
+            // }
+            // handleGetIndexDataSucc(res) {
+            //     const data = res.data.data;
+            //     this.$store.commit("setData", data.swiperInfo)
+            //     // this.swiperInfo = data.swiperInfo;
+            // },
+            // handleGetIndexDataErr(err) {
+            //     console.log(err)
+            // }
+        
     }
 </script>
 

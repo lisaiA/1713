@@ -43,6 +43,9 @@
                     this.show = true;
                 } 
             }
+        },
+        destroyed () {
+            window.removeEventListener('scroll', this.onScroll)
         }
     }
 </script>

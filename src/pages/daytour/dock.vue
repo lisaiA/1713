@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="dock" ref="dock" v-if="show">
+        <div class="dock" ref="dock" v-show="show">
             <ul class="dock-type">
                 <li class="dock-class">
                     <i class="dock-icon iconfont icon-quanbufenlei"></i>
@@ -37,10 +37,10 @@
             onScroll () {
                 let scrolled = document.documentElement.scrollTop || document.body.scrollTop
                 if (scrolled >= 200) {
-                    this.show = false;
+                    this.show = true
                 } 
                 if (scrolled <= 100) {
-                    this.show = true;
+                    this.show = false;
                 } 
             }
         },
@@ -81,9 +81,9 @@
         font-size: .24rem;
     }
     .fade-enter-active, .fade-leave-active {
-        transition: opacity 1s
+        transition: all 1s ease;
     }
     .fade-enter, .fade-leave-to {
-        opacity: 0
+        transform: translateY(.8rem);
     }
 </style>

@@ -5,6 +5,8 @@ import store from './vuex'
 import FastClick from 'fastclick';
 FastClick.attach(document.body);
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import VuePaginate from 'vue-paginate'
+Vue.use(VuePaginate);
 
 Vue.config.productionTip = false
 

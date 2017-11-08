@@ -37,10 +37,10 @@
             onScroll () {
                 let scrolled = document.documentElement.scrollTop || document.body.scrollTop
                 if (scrolled >= 200) {
-                    this.show = true
+                    this.show = false;
                 } 
                 if (scrolled <= 100) {
-                    this.show = false;
+                    this.show = true;
                 } 
             }
         },
